@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CV
-permalink: /Cv/
+title: Job History
+permalink: /History/
 ---
 
 
