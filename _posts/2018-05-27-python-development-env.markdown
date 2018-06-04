@@ -4,23 +4,77 @@ title:  "Python Development Env"
 date:   2018-05-01 17:00:11 +0800
 categories: jekyll update1
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+##VM network configuration In windows 10
+ 1. wi fi properities / ICS (internet connection sharing)
+ 1. choose VMnet8(NAT) LAN card 
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+###In CentOs 7  
 
-Jekyll also offers powerful support for code snippets:
+```bash
+bashifup ens33
+/etc/sysconfig/network-scripts/ifcfg-ens33
+ONBOOT=yes
+ifup  ens33
+```
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+```bash
+bashifup ens33
+firwall-cmd --list-all
+firwall-cmd --get-active-zones
+firwall-cmd --zone=public --add-port=8000/tcp --permanet
+```
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+[reference](https://janikarhunen.fi/how-to-install-python-3-6-1-on-centos-7.html)
+##Install the necessary utilities
+```bash
+sudo yum update
+sudo yum install yum-utils
+sudo yum groupinstall development     
+```
+
+## Install Python 3.6.1
+
+```bash
+sudo yum install https://centos7.iuscommunity.org/ius-release.rpm
+```
+https://centos7.iuscommunity.org/ius-release.rpm
 
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+```bash
+sudo yum install python36u
+```
+
+```bash
+python3.6 -V
+```
+
+```bash
+sudo yum install python36u-pip
+sudo yum install python36u-devel
+```
+
+```bash
+# This should return the system Python version
+python –V
+# output:
+Python 2.7.5
+
+# This should return the Python 3 version
+python3.6 –V
+# output:
+Python 3.6.1
+```
+
+That’s it. Now I have Python 3.6 ready torun my apps! 
+
+## Creating a virtualenv
+
+```bash
+python3.6 -m venv venv
+```
+To activate the virtualenv and start installing packages with pip:
+```bash
+. venv/bin/activate
+pip install [package_name]
+pip install -r requirements.txt
+```
