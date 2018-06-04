@@ -18,9 +18,11 @@ ifup  ens33
 
 ```bash
 ifup ens33
-firwall-cmd --list-all
-firwall-cmd --get-active-zones
-firwall-cmd --zone=public --add-port=8000/tcp --permanet
+firewall-cmd --list-all
+firewall-cmd --get-active-zones
+firewall-cmd --zone=public --add-port=8000/tcp --permanent
+## allow ssh to access XSHELL 
+firewall-cmd --zone=public --add-port=22/tcp --permanent
 ```
 
 [reference](https://janikarhunen.fi/how-to-install-python-3-6-1-on-centos-7.html)
