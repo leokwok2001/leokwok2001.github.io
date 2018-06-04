@@ -11,14 +11,13 @@ categories: jekyll update1
 ### In CentOs 7  
 
 ```bash
-bashifup ens33
-/etc/sysconfig/network-scripts/ifcfg-ens33
+vi /etc/sysconfig/network-scripts/ifcfg-ens33
 ONBOOT=yes
 ifup  ens33
 ```
 
 ```bash
-bashifup ens33
+ifup ens33
 firwall-cmd --list-all
 firwall-cmd --get-active-zones
 firwall-cmd --zone=public --add-port=8000/tcp --permanet
@@ -37,8 +36,6 @@ sudo yum groupinstall development
 ```bash
 sudo yum install https://centos7.iuscommunity.org/ius-release.rpm
 ```
-https://centos7.iuscommunity.org/ius-release.rpm
-
 
 ```bash
 sudo yum install python36u
