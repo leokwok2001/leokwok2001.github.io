@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Docker installation"
-date:   2018-06-13 14:45:11 +0800
+date:   2018-06-14 14:45:11 +0800
 categories: Docker installation
 ---
 
