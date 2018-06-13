@@ -1,0 +1,1 @@
+.Cells(NewDealSheetRows + 1, 39).Value = customerMasterWorkbook.Sheets("Customer").Cells(foundResult.Row, 19).Value
