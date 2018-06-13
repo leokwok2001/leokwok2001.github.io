@@ -5,7 +5,6 @@ date:   2018-06-11 10:45:11 +0800
 categories: apache install
 ---
 
-# 編譯安裝 apache 2.4.29
 
 
 ## 編譯安裝 apache 前必先安裝的軟体
