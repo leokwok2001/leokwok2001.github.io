@@ -6,9 +6,6 @@ categories: sublime text 3
 ---
 
 
-# sublime text 3 HTML/CSS/JS Prettify 
-
-
 
 
 Preferences / Package Control / Install Package /
