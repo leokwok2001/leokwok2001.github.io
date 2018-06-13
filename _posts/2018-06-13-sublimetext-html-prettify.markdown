@@ -10,7 +10,7 @@ categories: sublime text 3
 
 Preferences / Package Control / Install Package /
 
-###### HTML/CSS/JS Prettify
+### HTML/CSS/JS Prettify
 
 Ctrl + Shift +H
 
