@@ -30,7 +30,22 @@ docker --help|more
 docker --help|more
 ```
 
-
+##Install the NTP package:
+[reference](https://www.certdepot.net/rhel7-set-ntp-service/)
+```bash
+timedatectl #current time zone.
+timedatectl list-timezones #To get the list of all the available time zones
+yum install -y ntp #Install the NTP package 
+systemctl enable ntpd
+systemctl start ntpd
+vi /etc/ntp.conf 
+```
+##Download docker images
+```bash
+docker pull nginx
+docker pull centos
+cat xxxx.tar |docker import -centos
+```
 
 ```bash
 apt-get update  
