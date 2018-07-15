@@ -19,13 +19,16 @@ yum install  docker* -y
 ```
 
 ```bash
-
 # start docker service
 cat /etc/redhat-release
 systemctl start docker.service
-
+docker --help|more
 ```
 
+```bash
+# start docker help
+docker --help|more
+```
 
 
 
