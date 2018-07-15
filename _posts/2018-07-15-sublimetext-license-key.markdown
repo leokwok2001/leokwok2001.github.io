@@ -5,9 +5,14 @@ date:   2018-07-15 11:45:11 +0800
 categories: sublime text 3
 ---
 
+### In hosts file
+C:\Windows\System32\drivers\etc\hosts
+Windows - SystemRoot > system32 > drivers > etc > hosts
+Linux - /etc/hosts
+Mac OS X - /private/etc/hosts
 
 
-
+### license key
 ----- BEGIN LICENSE -----
 
 sgbteam
