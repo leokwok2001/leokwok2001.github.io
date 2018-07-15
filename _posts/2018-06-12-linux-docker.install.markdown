@@ -11,6 +11,8 @@ categories: Docker installation
 ```bash
 
 # 基于CentOS7.x（7.0+)
+sed -i 'SELINUX/s/enforcing/disabled/g' /etc/selinux/config
+set enfoce 0
 yum install -y epel-release
 yum install -y docker*
 ```
