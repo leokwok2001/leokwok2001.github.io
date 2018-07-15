@@ -20,7 +20,7 @@ yum install  docker* -y
 
 ```bash
 
-# 基于CentOS7.x（7.0+) start docker service
+# start docker service
 cat /etc/redhat-release
 systemctl start docker.service
 
