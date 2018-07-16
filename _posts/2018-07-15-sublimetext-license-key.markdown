@@ -12,6 +12,15 @@ Linux - /etc/hosts
 Mac OS X - /private/etc/hosts
 
 
+```bash
+* Added these lines into  /etc/hosts 
+
+127.0.0.1       www.sublimetext.com
+127.0.0.1       license.sublimehq.com
+```
+
+
+
 ### license key
 ----- BEGIN LICENSE -----
 
