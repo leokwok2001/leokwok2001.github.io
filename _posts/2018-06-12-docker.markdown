@@ -65,7 +65,6 @@ docker stop $(docker ps -a -q)
 # remove all docker 
 docker rm $(docker ps -a -q)
 ```
-
-
 ## Docker-compose
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04
+[reference](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04)
+
