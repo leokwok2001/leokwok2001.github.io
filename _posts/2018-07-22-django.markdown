@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "django"
+date:   2018-07-22 10:45:11 +0800
+categories: django
+---
+
+
+[reference]()
+```bash
+# run server all anywhere to port 8000
+./manage.py runserver 0.0.0.0:8000
+```
+
+
+
+## AllowHost Error
+```bash
+DisallowedHost at /
+Invalid HTTP_HOST header: '192.168.0.102:8000'. You may need to add '192.168.0.102' to ALLOWED_HOSTS.
+```
+
+## solve configure the settings.py files
+```bash
+ALLOWED_HOST = ['*']
+# or 
+ALLOWED_HOST = ['xxx.xxx.xxx.xxx'] # your ip addresss
+```
