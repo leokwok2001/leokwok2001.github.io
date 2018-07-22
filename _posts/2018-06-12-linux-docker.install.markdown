@@ -66,3 +66,6 @@ docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 ```
 
+
+## Docker-compose
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04
