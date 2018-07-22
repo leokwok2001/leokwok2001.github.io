@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Docker installation"
+title:  "Docker"
 date:   2018-06-14 14:45:11 +0800
-categories: Docker installation
+categories: Docker
 ---
 
 
