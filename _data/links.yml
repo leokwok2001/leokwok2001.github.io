@@ -2,4 +2,11 @@
   title: "github"
 
 - url: "https://djangogirlstaipei.gitbooks.io/django-girls-taipei-tutorial/django/dynamic_url.html"
-  title: ":joy: djangogirls taipei"  
+  title: "djangogirls taipei"  
+
+- url: "https://www.youtube.com/channel/UCvmINlrza7JHB1zkIOuXEbw/search?query=jekyll"
+  title: "Giraffe Academy jekyll"
+
+- url: "https://github.com/twtrubiks"
+  title: "twtrubiks docker"  
+
