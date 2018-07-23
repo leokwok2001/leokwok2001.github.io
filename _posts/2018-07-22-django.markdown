@@ -6,6 +6,16 @@ categories: django
 ---
 
 
+## python virtual env
+```bash
+python3.6 -m venv test
+source /bin/activate
+```
+## install pip tools
+```bash
+pip install django==1.11.9
+```
+
 
 ```bash
 # run server all anywhere to port 8000
@@ -25,4 +35,29 @@ Invalid HTTP_HOST header: '192.168.0.102:8000'. You may need to add '192.168.0.1
 ALLOWED_HOST = ['*']
 # or 
 ALLOWED_HOST = ['xxx.xxx.xxx.xxx'] # your ip addresss
+```
+
+
+
+
+## Django error,TemplateDoesNotExist at /hello
+
+```bash
+# = [os.path.join(BASE_DIR,"templates")]
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 ```
