@@ -128,6 +128,8 @@ admin.site.register(Music)
 ## done
 http://127.0.0.1:8000/admin
 
+[reference](https://github.com/twtrubiks/django-rest-framework-tutorial)
+
 
 ## run server at anywhere to port 8000
 ```bash
