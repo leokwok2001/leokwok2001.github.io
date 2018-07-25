@@ -16,6 +16,11 @@ source /bin/activate
 pip install django==1.11.9
 ```
 
+## list pip installed package
+```bash
+pip list
+```
+
 ## run server at anywhere to port 8000
 ```bash
 ./manage.py runserver 0.0.0.0:8000
