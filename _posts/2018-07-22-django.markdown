@@ -21,12 +21,124 @@ pip install django==1.11.9
 pip list
 ```
 
+## Django create project
+```bash
+django-admin startproject yourprojectname
+```
+
+## Django create App
+```bash
+python manage.py startapp yourappname
+```
+
+## Views
+### Create hello_django.html in ./templates folder
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{data}}
+</body>
+</html>
+```
+
+### in yourappname/views.py 
+```python
+from django.shortcuts import render
+
+# Create your views here.
+def hello_view(request):
+    return render(request, 'hello_django.html', {
+        'data': "Hello Django ",
+    })
+```
+
+## URLconf
+### in urls.py
+```python
+from django.conf.urls import url
+from django.contrib import admin
+from musics.views import hello_view
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^hello/', hello_view),
+]
+```
+
+## Models
+### in models.py
+```python
+from django.db import models
+
+
+# Create your models here.
+class Music(models.Model):
+    song = models.TextField(default="song")
+    singer = models.TextField(default="AKB48")
+    last_modify_date = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "music"
+```
+
+## Migrations
+```bash
+python3.6 manage.py makemigrations
+python3.3 manage.py migrate
+```
+
+## Admin Site
+### in settings.py
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    ......
+]
+```
+
+### urls.py
+```python
+urlpatterns = [
+    url(r'^admin/',admin.site.urls), 
+    .... , 
+]
+```
+
+### createsuperuser
+```bash
+python manage.py createsuperuser
+```
+
+### ./yourappname/admin.py
+```python
+rom django.contrib import admin
+
+# Register your models here.
+from django.contrib import admin
+from musics.models import Music
+admin.site.register(Music)
+```
+
+### done
+http://127.0.0.1:8000/admin
+
+
+
 ## run server at anywhere to port 8000
 ```bash
 ./manage.py runserver 0.0.0.0:8000
 ```
+
+
+
 ## To kill it with -9 you will
-have to list all running manage.py processes, for instance:
+## have to list all running manage.py processes, for instance:
 ```bash
 ps aux | grep -i manage
 kill -9 pid
