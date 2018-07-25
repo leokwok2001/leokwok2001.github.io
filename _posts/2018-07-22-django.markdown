@@ -16,12 +16,16 @@ source /bin/activate
 pip install django==1.11.9
 ```
 
-
+## run server at anywhere to port 8000
 ```bash
-# run server all anywhere to port 8000
 ./manage.py runserver 0.0.0.0:8000
 ```
-
+## To kill it with -9 you will
+have to list all running manage.py processes, for instance:
+```bash
+ps aux | grep -i manage
+kill -9 pid
+```
 
 
 ## AllowHost Error
