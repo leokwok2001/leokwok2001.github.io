@@ -117,7 +117,7 @@ python manage.py createsuperuser
 
 ### ./yourappname/admin.py
 ```python
-rom django.contrib import admin
+from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
@@ -125,9 +125,8 @@ from musics.models import Music
 admin.site.register(Music)
 ```
 
-### done
+## done
 http://127.0.0.1:8000/admin
-
 
 
 ## run server at anywhere to port 8000
@@ -145,13 +144,15 @@ kill -9 pid
 ```
 
 
-## AllowHost Error
+## Common Error
+
+### AllowHost Error
 ```bash
 DisallowedHost at /
 Invalid HTTP_HOST header: '192.168.0.102:8000'. You may need to add '192.168.0.102' to ALLOWED_HOSTS.
 ```
 [reference](https://docs.djangoproject.com/en/1.8/ref/settings/#allowed-hosts)
-## solve configure the settings.py files
+### solve configure the settings.py files
 ```bash
 ALLOWED_HOST = ['*']
 # or 
@@ -159,9 +160,7 @@ ALLOWED_HOST = ['xxx.xxx.xxx.xxx'] # your ip addresss
 ```
 
 
-
-
-## Django error,TemplateDoesNotExist at /hello
+### Django error,TemplateDoesNotExist at /hello
 
 ```bash
 # = [os.path.join(BASE_DIR,"templates")]
