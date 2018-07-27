@@ -2,7 +2,7 @@
 layout: post
 title:  "nginx"
 date:   2018-06-20 10:45:11 +0800
-categories: nginx installation
+categories: nginx
 ---
 
 ## Install 
