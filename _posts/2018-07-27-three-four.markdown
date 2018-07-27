@@ -7,7 +7,7 @@ categories: church
 
 
 # 第四課
-http://www.godsword7.net/NAA01-15.htm
+[ref](http://www.godsword7.net/NAA01-15.htm)
 希臘化的猶太人(許多信主) 
   - 很多方面都不同猶太地的猶太人
   - 不熟悉亞蘭語, 當時的猶太地說的語言
