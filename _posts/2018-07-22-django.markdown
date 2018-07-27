@@ -30,7 +30,9 @@ django-admin startproject yourprojectname
 ```bash
 python manage.py startapp yourappname
 ```
+ 
 
+ 
 ## Views
 ### Create hello_django.html in ./templates folder
 ```html
