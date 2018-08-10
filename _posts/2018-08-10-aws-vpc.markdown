@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "AWS - VPC"
+date:   2018-10-08 10:45:11 +0800
+categories: subnet vpc aws
+---
+
+
+## IP Subnet
+> 10.0.0.0/26
+start - 10.0.0.0
+2^ (32-26) = 2 ^6 = 64
+End 10.0.0.63
+
+e.g
+11111111.11111111.11000000 (subnet mask)
+
+2^6 = 64
