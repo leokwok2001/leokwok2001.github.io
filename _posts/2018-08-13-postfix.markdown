@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "postfix squirrelmail"
+date:   2018-08-13 0:45:11 +0800
+categories: squirrelmail postfix courier pop imap ubuntu
+---
+## mail server ubuntu (Squirrelmail postfix courier pop imap)
+
+[ref](https://www.youtube.com/watch?v=SPu4tW_Zo0Y)
+
+### 1 install apache
+```bash
+apt-get update 
+apt-get install apache2
+```
+
+http://localhost  
+done!
+
+
+### 2 install postfix
+```bash
+apt-get instal vim 
+apt-get install postfix
+#choose "internet site"
+#system mail name:  yourdomain.com
+```
+
+```bash  
+vim /etc/postfix/main.cf
+     inet_protocols = ipv4
+     home_mailbox = Maildir/
+
+/etc/init.d/postfix restart
+```
+
+### 2 install courier-pop , courier-imap
+apt-get install courier-pop
+ choose "no"
+apt-get install courier-imap
+ 
+### 3 install squirrelmail
+
+```bash
+apt-get install squirrelmail
+squirrelmail-config
+ command>> D
+ command>> courier
+ command>> 2
+ command>> 1
+ [trim(implode(....]:  yourdomain.com
+ command>> q 
+ you have not saved your data.
+ save ? (Y/n): Y
+```
+
+### 4 link squirrelmail folder into apahce 
+```bash
+cd /var/www
+ln -s /usr/share/squirrelmail webmail
+```
+
+### 5 restart apache 
+```bash
+ /etc/init.d/apache2 restart
+```
+ ### 6 create mail user
+```bash
+ adduser user1
+ adduser user2
+ ```
+ ### 7  login squirrelmail 
+ http://yourdomain/webmail
+ login: user1
+
+ 
