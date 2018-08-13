@@ -64,12 +64,12 @@ ln -s /usr/share/squirrelmail webmail
 ```bash
  /etc/init.d/apache2 restart
 ```
- ### 6 create mail user
+### 6 create mail user
 ```bash
  adduser user1
  adduser user2
  ```
- ### 7  login squirrelmail 
+### 7  login squirrelmail 
  http://yourdomain/webmail
  login: user1
 
