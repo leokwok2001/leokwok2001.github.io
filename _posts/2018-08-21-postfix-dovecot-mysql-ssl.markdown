@@ -280,3 +280,140 @@ auth_mechanisms = plain login
 #!include auth-vpopmail.conf.ext  
 #!include auth-static.conf.ext
 ```
+修改/etc/dovecot/conf.d/auth-sql.conf.ext文檔
+```bash
+passdb {  
+    driver = sql  
+    args = /etc/dovecot/dovecot-sql.conf.ext  
+}  
+
+userdb {  
+    driver = static  
+    args = uid=vmail gid=vmail home=/var/mail/vhosts/%d/%n  
+}
+```
+修改/etc/dovecot/dovecot-sql.conf.ext文檔
+```bash
+driver = mysql
+```
+
+取消文檔中connect行的註釋，並將其修改為如下：
+```bash
+connect = host=127.0.0.1 dbname=mailserver user=mailserver password=mailserver123
+```
+取消文檔中default_pass_scheme行的註釋，並將其修改為如下：
+```bash
+default_pass_scheme = SHA512-CRYPT
+```
+取消文檔中password_query行的註釋，並將起修改為如下：
+```bash
+password_query = SELECT email as user, password FROM virtual_users WHERE email='%u';
+```
+保存退出
+在命令行種輸入如下內容以修改目錄權限：
+```bash
+chown -R vmail:dovecot /etc/dovecot
+chmod -R o-rwx /etc/dovecot
+```
+```bash
+修改/etc/dovecot/conf.d/10-master.conf文檔
+打開文檔做如下修改「通過將端口設置為0，以禁用非SSL加密的IMAP和POP3協議」：
+
+service imap-login {  
+    inet_listener imap {  
+        port = 0   
+    }  
+    ...  
+}  
+
+service pop3-login {  
+    inet_listener pop3 {  
+        port = 0  
+    }  
+    ...  
+}
+```
+
+找到文檔中的service lmtp並將其修改如下：.
+```bash
+service lmtp {  
+        unix_listener /var/spool/postfix/private/dovecot-lmtp {  
+        mode = 0600  
+        user = postfix  
+        group = postfix  
+  }  
+
+  # Create inet listener only if you can't use the above UNIX socket  
+  #inet_listener lmtp {  
+        #Avoid making LMTP visible for the entire internet  
+        #address =  
+        #port =  
+        #}  
+ }
+
+```
+找到文檔中service auth並將其內容修改如下：
+```bash
+service auth {  
+    # auth_socket_path points to this userdb socket by default. It's typically  
+    # used by dovecot-lda, doveadm, possibly imap process, etc. Its default  
+    # permissions make it readable only by root, but you may need to relax these  
+    # permissions. Users that have access to this socket are able to get a list  
+    # of all usernames and get results of everyone's userdb lookups.  
+
+    unix_listener /var/spool/postfix/private/auth {  
+            mode = 0666  
+            user = postfix  
+            group = postfix  
+    }  
+
+    unix_listener auth-userdb {  
+            mode = 0600  
+            user = vmail  
+            #group =  
+    }  
+
+    # Postfix smtp-auth  
+    #unix_listener /var/spool/postfix/private/auth {  
+    #       mode = 0666  
+    #}  
+
+    # Auth process is run as this user.  
+    user = dovecot  
+}
+```
+
+找到文檔中service auth-worker內容並修改如下：
+```bash
+service auth-worker {  
+    # Auth worker process is run as root by default, so that it can access  
+    # /etc/shadow. If this isn't necessary, the user should be changed to  
+    # $default_internal_user.  
+
+    user = vmail  
+}
+```
+}
+修改/etc/dovecot/conf.d/10-ssl.conf文檔
+找到文檔中ssl_cert並修改內容如下「請確保dovecot的pem文檔已經存在，如果大家使用了自己的SSL文檔，請將如下內容修改為相應的路徑」：
+
+```bash
+ssl_cert = </etc/dovecot/dovecot.pem  
+ssl_key = </etc/dovecot/private/dovecot.pem
+```
+強制用户使用SSL加密：
+```bash
+ssl = required
+```
+
+重新啟動Dovecot服務：
+```bash
+service dovecot restar
+```
+### 測試郵件服務器是否正常
+設置一個帳號，可以向MySQL對應的表中插入數據，接下來使用郵件客户端來測試一下。推薦使用Thunderbird郵件客户端或者Foxmail客户端等。請注意以下內容：
+郵箱的全稱「包括後面的@mydomain.com」將作為用户名
+郵箱密碼是MySQL數據庫種對應郵箱的密碼
+服務器相關接口是否全部開放？993、995、25等
+郵件收發的所有協議，包括IMAP、POP3、SMTP全部都需要開啟SSL加密
+配置好客户端之後即可連接獲取、發送郵件。
