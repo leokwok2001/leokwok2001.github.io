@@ -545,3 +545,8 @@ ufw allow  22
 ufw allow  993
 ufw allow 995
 ```
+### telnet port is work
+```bash
+telnet domain.com 25
+ehlo domain.com
+```
