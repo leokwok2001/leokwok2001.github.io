@@ -13,15 +13,15 @@ categories: postfix dovecot ssl mysql
 - [Set up a Postfix Mail Server With Dovecot and Squirrelmail on Ubuntu 16.04](https://www.1and1.com/cloud-community/learn/application/e-mail/set-up-a-postfix-mail-server-with-dovecot-and-squirrelmail-on-ubuntu-1604/) 
 
 ### 1. check the hostname 
-```bash
+~~~
 hostname -f
-```
-```bash
+~~~
+~~~
 vi /etc/hostname
-```
-```
+~~~
+~~~
 mail.leo-kwok.com
-```
+~~~
 
 ### 2. change hosts
 
