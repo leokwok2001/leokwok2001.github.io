@@ -4,7 +4,7 @@ title:  "postfix dovecot ssl mysql"
 date:   2018-08-13 0:45:11 +0800
 categories: postfix dovecot ssl mysql
 ---
-## mail server ubuntu (Squirrelmail postfix courier pop imap)
+
 
 [Postfix+Dovecot+MySQL搭建郵件服務器](https://hk.saowen.com/a/b9e7d80207a50d41293cdb5affa196d54967a12c36d42b87915b3f25d721df22)
 [啟動 dovecot 的 smtp 認證機制](http://blog.kevinlinul.idv.tw/?p=251)
