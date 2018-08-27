@@ -6,6 +6,9 @@ categories: postfix dovecot ssl mysql
 ---
 ## mail server ubuntu (Squirrelmail postfix courier pop imap)
 
+### 1. [Postfix+Dovecot+MySQL搭建郵件服務器](https://hk.saowen.com/a/b9e7d80207a50d41293cdb5affa196d54967a12c36d42b87915b3f25d721df22)
+
+
 ### 1. check the hostname 
 ```bash
 hostname -f
@@ -98,7 +101,7 @@ select * from virtual_users;
 select * from virtual_aliases;
 
 ```
-### Postfix的配置 
+### Postfix的配置/安裝
 
 ```bash
 apt-get install postfix postfix-mysql
@@ -111,7 +114,7 @@ cp /etc/postfix/main.cf /etc/postfix/main.cf_backup_20150511
 
 
 ```
-remark below lines
+### remark below lines
 ```bash
 # TLS parameters  
   #smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem  
@@ -119,7 +122,7 @@ remark below lines
   #smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache  
   #smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 ```
-insert below lines
+### insert below lines
 ```bash
 smtpd_tls_cert_file=/etc/dovecot/dovecot.pem  
 smtpd_tls_key_file=/etc/dovecot/private/dovecot.pem  
@@ -132,17 +135,17 @@ smtpd_sasl_path = private/auth
 smtpd_sasl_auth_enable = yes  
 smtpd_recipient_restrictions =  permit_sasl_authenticated, permit_mynetworks, reject_unauth_destination
 ```
-insert below lines
+### insert below lines
 ```bash
 mydestination =mydestination = localhost, mail.leo-kwok.com, localhost.$mydomain
 ```
-insert below lines for LDA「Local Delivery Agent」
+### insert below lines for LDA「Local Delivery Agent」
 ```bash
 #Handing off local delivery to Dovecot's LMTP, and telling it where to store mail  
 virtual_transport = lmtp:unix:private/dovecot-lmtp
 
 ```
-insert below lines for postfix to mysql
+### insert below lines for postfix to mysql
 ```bash
 #Virtual domains, users, and aliases  
 virtual_mailbox_domains = mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf  
@@ -202,7 +205,7 @@ service postfix restart
 postmap -q all@leo-kwok.com mysql:/etc/postfix/mysql-virtual-alias-maps.cf
 ```
 
-/etc/postfix/master.cf
+### /etc/postfix/master.cf
 1 找到submission和smtps所在的兩行，並將其註釋去掉。
 這樣做的目的是允許Postfix通過587和465端口發送郵件
 
@@ -211,11 +214,11 @@ postmap -q all@leo-kwok.com mysql:/etc/postfix/mysql-virtual-alias-maps.cf
 service postfix restart
 ```
 
-### Dovecot 
+### Dovecot 設定/安裝
 ```bash
 apt-get install dovecot-core dovecot-impd dovecot-pop3d dovecot-lmtpd dovecot-mysql
 ```
-
+~~~
 /etc/dovecot/dovecot.confDovecot的主配置文檔
 /etc/dovecot/conf.d/10-mail.confDovecot將要操作的磁盤路徑相關配置信息
 /etc/dovecot/conf.d/10-auth.conf用户驗證相關配置信息
@@ -223,7 +226,9 @@ apt-get install dovecot-core dovecot-impd dovecot-pop3d dovecot-lmtpd dovecot-my
 /etc/dovecot/dovecot-sql.conf.extDovecot與數據庫連接相關配置信息
 /etc/dovecot/conf.d/10-master.confDovecot本地socket相關配置信息
 /etc/dovecot/conf.d/10-ssl.conf關於SSL的相關配置信息
+~~~
 
+### /etc/dovecot/dovecot.conf
 ```bash
 # /etc/dovecot/dovecot.conf
 !include conf.d/*.conf
@@ -232,7 +237,7 @@ apt-get install dovecot-core dovecot-impd dovecot-pop3d dovecot-lmtpd dovecot-my
 include_try /usr/share/dovecot/protocols.d/*.protocol  
 protocols = imap pop3 lmtp
 ```
-
+### /etc/dovecot/conf.d/10-mail.conf
 ```bash
 # /etc/dovecot/conf.d/10-mail.conf
 mail_location = maildir:/var/mail/vhosts/%d/%n
@@ -259,18 +264,18 @@ useradd -g vmail -u 5000 vmail -d /var/mail
 chown -R vmail:vmail /var/mail
 ```
 
-
+### /etc/dovecot/conf.d/10-auth.conf
 ```bash
 # /etc/dovecot/conf.d/10-auth.conf
 disable_plaintext_auth = yes
 auth_mechanisms = plain login
 ```
 
-默認情況下，Dovecot是允許Ubuntu系統用户登錄使用的，我們需要將其禁用。找到文檔種如下內容並將其註釋
+### 默認情況下，Dovecot是允許Ubuntu系統用户登錄使用的，我們需要將其禁用。找到文檔種如下內容並將其註釋
 ```bash
 #!include auth-system.conf.ext
 ```
-開啟Dovecot的MySQL支持，取消!include auth-sql.conf.ext的註釋符號：
+### 開啟Dovecot的MySQL支持，取消!include auth-sql.conf.ext的註釋符號：
 ```bash
 #!include auth-system.conf.ext  
 !include auth-sql.conf.ext  
@@ -280,7 +285,7 @@ auth_mechanisms = plain login
 #!include auth-vpopmail.conf.ext  
 #!include auth-static.conf.ext
 ```
-修改/etc/dovecot/conf.d/auth-sql.conf.ext文檔
+### 修改/etc/dovecot/conf.d/auth-sql.conf.ext文檔
 ```bash
 passdb {  
     driver = sql  
@@ -292,7 +297,7 @@ userdb {
     args = uid=vmail gid=vmail home=/var/mail/vhosts/%d/%n  
 }
 ```
-修改/etc/dovecot/dovecot-sql.conf.ext文檔
+### 修改/etc/dovecot/dovecot-sql.conf.ext文檔
 ```bash
 driver = mysql
 ```
@@ -309,15 +314,15 @@ default_pass_scheme = SHA512-CRYPT
 ```bash
 password_query = SELECT email as user, password FROM virtual_users WHERE email='%u';
 ```
-保存退出
+### 保存退出
 在命令行種輸入如下內容以修改目錄權限：
 ```bash
 chown -R vmail:dovecot /etc/dovecot
 chmod -R o-rwx /etc/dovecot
 ```
-```bash
-修改/etc/dovecot/conf.d/10-master.conf文檔
+### 修改/etc/dovecot/conf.d/10-master.conf文檔
 打開文檔做如下修改「通過將端口設置為0，以禁用非SSL加密的IMAP和POP3協議」：
+```bash
 
 service imap-login {  
     inet_listener imap {  
@@ -393,8 +398,8 @@ service auth-worker {
     user = vmail  
 }
 ```
-}
-修改/etc/dovecot/conf.d/10-ssl.conf文檔
+
+### 修改/etc/dovecot/conf.d/10-ssl.conf文檔
 找到文檔中ssl_cert並修改內容如下「請確保dovecot的pem文檔已經存在，如果大家使用了自己的SSL文檔，請將如下內容修改為相應的路徑」：
 
 ```bash
@@ -418,17 +423,19 @@ service dovecot restar
 郵件收發的所有協議，包括IMAP、POP3、SMTP全部都需要開啟SSL加密
 配置好客户端之後即可連接獲取、發送郵件。
 
-### remarks
+### 注意
 ```bash
 openssl req -new -x509 -days 3650 -nodes -out /etc/postfix/ssl/cacert.pem -keyout /etc/postfix/ssl/server.key
 ```
+### /etc/postfix/main.cf
 ```bash
 #/etc/postfix/main.cf
 smtpd_tls_key_file = /etc/postfix/ssl/server.key
 smtpd_tls_cert_file = /etc/postfix/ssl/cacert.pem
 smtpd_tls_CAfile = /etc/postfix/ssl/cacert.pem
 ```
-```bash
+### /etc/dovecot/conf.d/10-ssl.conf
+```bash 
 #/etc/dovecot/conf.d/10-ssl.conf
 ssl_cert = </etc/postfix/ssl/cacert.pem
 ssl_key = </etc/postfix/ssl/server.key
