@@ -209,15 +209,18 @@ postmap -q all@leo-kwok.com mysql:/etc/postfix/mysql-virtual-alias-maps.cf
 ```
 
 ### /etc/postfix/master.cf
-1 找到submission和smtps所在的兩行，並將其註釋去掉。
+~~~
+找到submission和smtps所在的兩行，並將其註釋去掉。
 這樣做的目的是允許Postfix通過587和465端口發送郵件
+~~~
 
+### restart postfix
 ```bash
 # restart postfix
 service postfix restart
 ```
 
-### Dovecot 設定/安裝
+## Dovecot 設定/安裝
 ```bash
 apt-get install dovecot-core dovecot-impd dovecot-pop3d dovecot-lmtpd dovecot-mysql
 ```
