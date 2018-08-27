@@ -417,3 +417,20 @@ service dovecot restar
 服務器相關接口是否全部開放？993、995、25等
 郵件收發的所有協議，包括IMAP、POP3、SMTP全部都需要開啟SSL加密
 配置好客户端之後即可連接獲取、發送郵件。
+
+### remarks
+```bash
+openssl req -new -x509 -days 3650 -nodes -out /etc/postfix/ssl/cacert.pem -keyout /etc/postfix/ssl/server.key
+```
+```bash
+#/etc/postfix/main.cf
+smtpd_tls_key_file = /etc/postfix/ssl/server.key
+smtpd_tls_cert_file = /etc/postfix/ssl/cacert.pem
+smtpd_tls_CAfile = /etc/postfix/ssl/cacert.pem
+```
+```bash
+#/etc/dovecot/conf.d/10-ssl.conf
+ssl_cert = </etc/postfix/ssl/cacert.pem
+ssl_key = </etc/postfix/ssl/server.key
+#ssl_ca =  </etc/postfix/ssl/cacert.pem
+```
