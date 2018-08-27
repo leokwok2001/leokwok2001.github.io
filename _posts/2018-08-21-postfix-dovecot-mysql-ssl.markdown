@@ -6,9 +6,11 @@ categories: postfix dovecot ssl mysql
 ---
 
 
-[Postfix+Dovecot+MySQL搭建郵件服務器](https://hk.saowen.com/a/b9e7d80207a50d41293cdb5affa196d54967a12c36d42b87915b3f25d721df22)
-[啟動 dovecot 的 smtp 認證機制](http://blog.kevinlinul.idv.tw/?p=251)
-[Set up a Postfix Mail Server With Dovecot and Squirrelmail on Ubuntu 16.04](https://www.1and1.com/cloud-community/learn/application/e-mail/set-up-a-postfix-mail-server-with-dovecot-and-squirrelmail-on-ubuntu-1604/) 
+- [Postfix+Dovecot+MySQL搭建郵件服務器](https://hk.saowen.com/a/b9e7d80207a50d41293cdb5affa196d54967a12c36d42b87915b3f25d721df22)
+
+- [啟動 dovecot 的 smtp 認證機制](http://blog.kevinlinul.idv.tw/?p=251)
+
+- [Set up a Postfix Mail Server With Dovecot and Squirrelmail on Ubuntu 16.04](https://www.1and1.com/cloud-community/learn/application/e-mail/set-up-a-postfix-mail-server-with-dovecot-and-squirrelmail-on-ubuntu-1604/) 
 
 ### 1. check the hostname 
 ```bash
