@@ -504,7 +504,7 @@ alias_database = hash:/etc/aliases
 myorigin = /etc/mailname
 #mydestination = $myhostname, mail.leo-kwok.com, localhost.leo-kwok.com, , localhost
 
-mydestination = localhost, mail.leo-kwok.com, localhost.$mydomain # <--this must have
+mydestination = localhost,8km.com.hk, mail.leo-kwok.com, localhost.$mydomain # <--this must have  also ,  multiple domain 
 #Handing off local delivery to Dovecot's LMTP, and telling it where to store mail  
 virtual_transport = lmtp:unix:private/dovecot-lmtp
 
