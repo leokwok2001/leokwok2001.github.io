@@ -33,7 +33,7 @@ $ sudo /etc/init.d/apache2 restart
 
 OR
 $ sudo service apache2 restart
-
+```
 ## change to root user
 ```bash
 sudo -s
