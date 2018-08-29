@@ -25,3 +25,8 @@ sudo ntpq -p
 ```bash
 sudo -s
 ```
+
+## firewall-cmd
+```bash
+firewall-cmd --reload
+```

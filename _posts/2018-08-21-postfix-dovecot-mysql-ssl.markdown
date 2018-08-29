@@ -332,7 +332,7 @@ chmod -R o-rwx /etc/dovecot
 
 service imap-login {  
     inet_listener imap {  
-        port = 0   
+        port = 0  # 如果用 squirrelmail 要改成 port = 143
     }  
     ...  
 }  
