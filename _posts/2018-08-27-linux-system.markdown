@@ -4,19 +4,23 @@ title:  "linux system "
 date:   2018-08-27 10:45:11 +0800
 categories: linux system
 ---
+<<<<<<< HEAD
 
 
 
 ```bash
 sudo -s #su root user
 ```
+=======
+## if /var/log/mail.log is empty or not work try:
+>>>>>>> ea0553e55f11117eaeb68f6ac19696401bdc8400
 ```bash
 #if /var/log/mail.log is empty or not work try:
 service syslog restart 
 #or 
 sudo service rsyslog restart
 ```
-
+## if system datatime incorrect
 ```bash
 # if system datatime incorrect
 sudo apt-get install ntp
@@ -26,6 +30,7 @@ sudo timedatectl set-ntp on
 sudo timedatectl set-timezone Asia/Hong_Kong
 sudo ntpq -p
 ```
+<<<<<<< HEAD
 ### apache start / stop
 ```bash
 # /etc/init.d/apache2 restart
@@ -35,4 +40,14 @@ $ sudo /etc/init.d/apache2 restart
 
 OR
 $ sudo service apache2 restart
+=======
+## change to root user
+```bash
+sudo -s
+```
+
+## firewall-cmd
+```bash
+firewall-cmd --reload
+>>>>>>> ea0553e55f11117eaeb68f6ac19696401bdc8400
 ```
