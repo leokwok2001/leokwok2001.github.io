@@ -5,6 +5,11 @@ date:   2018-08-27 10:45:11 +0800
 categories: linux system
 ---
 
+
+
+```bash
+sudo -s #su root user
+```
 ```bash
 #if /var/log/mail.log is empty or not work try:
 service syslog restart 
@@ -20,4 +25,14 @@ sudo dpkg-reconfigure tzdata
 sudo timedatectl set-ntp on
 sudo timedatectl set-timezone Asia/Hong_Kong
 sudo ntpq -p
+```
+### apache start / stop
+```bash
+# /etc/init.d/apache2 restart
+
+OR
+$ sudo /etc/init.d/apache2 restart
+
+OR
+$ sudo service apache2 restart
 ```

@@ -7,10 +7,11 @@ categories: vim
 
 ```bash
 sudo -s #su root user
-```
-
-```bash
 :1,$d  #mean delete all
 dd #mean delete one line
 :set num # mean display line number
+:w!  # save 
+:q # quite
+yy # copy a line
+p # paste copy
 ```
