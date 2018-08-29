@@ -690,3 +690,32 @@ ufw allow 995
 telnet domain.com 25
 ehlo domain.com
 ```
+
+## Sequirrelmail
+```bash
+http://yourdomain/squirrelmail/src/configtest.php 
+/usr/share/squirrelmail/config/conf.pl # configure setup
+/etc/squirrelmail/config.php # confirue file
+```
+
+### for squirrelmail must be:
+修改/etc/dovecot/conf.d/10-master.conf文檔
+```bash
+
+service imap-login {  
+    inet_listener imap {  
+        port = 143
+    }  
+    ...  
+}  
+```
+## for multiple domain must have this.
+```bash
+# /var/mail/vhosts/
+mkdir -p /var/mail/vhosts/yournewdomain.com
+chown -R vmail:vmail /var/mail/vhosts/yournewdomain.com
+```
+```bash
+#/etc/postfix/main.cf
+mydestination = localhost,8km.com.hk, mail.leo-kwok.com, localhost.$mydomain #<--
+```
