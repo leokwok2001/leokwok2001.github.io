@@ -719,3 +719,10 @@ chown -R vmail:vmail /var/mail/vhosts/yournewdomain.com
 #/etc/postfix/main.cf
 mydestination = localhost,8km.com.hk, mail.leo-kwok.com, localhost.$mydomain #<--
 ```
+
+## for test mail server security:
+~~~
+https://mxtoolbox.com/diagnostic.aspx
+https://www.checktls.com/
+https://emailsecuritygrader.com/
+~~~
