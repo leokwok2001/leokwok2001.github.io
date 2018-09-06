@@ -8,7 +8,7 @@ categories: linux system
 
 
 ## if /var/log/mail.log is empty or not work try:
->>>>>>> ea0553e55f11117eaeb68f6ac19696401bdc8400
+
 ```bash
 #if /var/log/mail.log is empty or not work try:
 service syslog restart 
