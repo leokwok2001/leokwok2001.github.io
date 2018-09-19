@@ -45,3 +45,7 @@ sudo -s
 firewall-cmd --reload
 
 ```
+## restart apache
+```bash
+systemctl restart apache2
+```

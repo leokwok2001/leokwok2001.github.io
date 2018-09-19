@@ -5,6 +5,15 @@ date:   2018-08-10 0:45:11 +0800
 categories: subnet vpc aws
 ---
 
+# IAM account login
+[https://leokwok2017.signin.aws.amazon.com/console/](https://leokwok2017.signin.aws.amazon.com/console/)
+
+for cloudfomration templates
+https://s3.amazonaws.com/solutions-reference/aws-waf-security-automations/latest/aws-waf-security-automations.template
+
+
+https://s3.amazonaws.com/solutions-reference/aws-waf-security-automations/latest/aws-waf-security-automations-alb.template
+# VPC
 
 ## IP Subnet
 > 10.0.0.0/26
@@ -34,3 +43,6 @@ e.g 11111111.11111111.11000000 (subnet mask)
 假如上述你都了解的話，讓我們反過來思考，用子網路IP起迄位址，反推出它的IP/Subnet表達格式？例如，我們要讓某C級網段(192.83.184.X)下的IP合法通過，這組子網路該怎麼用IPSubnet格式表示呢?
 
 首先，第四個IP值不遮封，因此遮罩IP位址的2進位是: 11111111.11111111.11111111.00000000 (255.255.255.0)，其網路位址位元數共24個，因此寫法是: 192.83.184.0/24，依此類推，B級網段就是192.84.0.0/16，全部開放就是: 0.0.0.0/0。所以，從IP位址的二進位表示法的位元分布，就可看出其背後的隱藏資訊，只要您能了解這些概念就可直接看出來，不需再作IP(192.83.184.0)轉二進位的運算(江湖一點訣)。
+
+
+

@@ -709,6 +709,13 @@ service imap-login {
     ...  
 }  
 ```
+### 修改/etc/php/7.0/apache2/php.ini
+
+```bash
+#http://yourdomain/squirrelmail/src/configtest.php  出現 error
+short_open_tag=On
+```
+
 ## for multiple domain must have this.
 ```bash
 # /var/mail/vhosts/
