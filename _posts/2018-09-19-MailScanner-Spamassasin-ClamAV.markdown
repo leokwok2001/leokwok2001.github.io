@@ -10,8 +10,8 @@ categories: MailScanner Spamassasin ClamAV
 ## download mailscanner
 - [MailScanner Spamassasin ClamAV 1](http://www.linuxmail.info/mailscanner-postfix-clamav-spamassassin-howto-ubuntu-10-04/)
 
-- [MailScanner Spamassasin ClamAV 2](https://blog.csdn.net/zstack_org/article/details/71514332)
-http://www.linuxmail.info/mailscanner-postfix-clamav-spamassassin-howto-centos-4/
+- [MailScanner Spamassasin ClamAV 2](https://blog.csdn.net/zstack_org/article/details/71514332
+http://www.linuxmail.info/mailscanner-postfix-clamav-spamassassin-howto-centos-4/)
 
 - [MailScanner Spamassasin ClamAV 3](http://www.linuxmail.info/mailscanner-postfix-clamav-spamassassin-howto-centos-4/)
 
