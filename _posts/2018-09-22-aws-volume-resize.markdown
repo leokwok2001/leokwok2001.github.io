@@ -8,8 +8,8 @@ categories: AWS instance volume resize
 # How to AWS instance volume resize
 
 ### In AWS console
-- 1. ELASTIC BLOCK STORAGE /Volumes /Actions/ Modify Volume/Size
-- 2. input Size value
+- ELASTIC BLOCK STORAGE /Volumes /Actions/ Modify Volume/Size
+- Input Size value
 
 ### ssh  remote to ec2 instances 
 AWS instance volume resize
