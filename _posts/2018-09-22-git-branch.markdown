@@ -59,3 +59,13 @@ Fast-forward
 執行 fetch，可以取得遠端數據庫的最新歷史記錄。取得的提交會導入在自動建立的分支中，並可以切換這個名為 FETCH_HEAD 的分支。
 
 FETCH_HEAD 合併後，歷史記錄會和執行pull操作的結果相同。實際上，pull = fetch + merge的內容所組成的。
+
+
+
+
+### 如果github, gitlab stored password 有問題可以試删除 Credential Manager內容
+
+若要開認證管理員，請選取 [開始]  按鈕然後搜尋 [控制台]。
+選取 [使用者帳戶] > [認證管理員] (Credential Manager)。 您可以從這個畫面管理 Web 認證和Windows 認證。
+
+s
