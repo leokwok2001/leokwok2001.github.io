@@ -75,6 +75,15 @@ git fetch <remote> <RemoteBranch>:<LocalBranch>
 git checkout <LocalBranch>
 ```
 
+### git stash 
+如果工作目錄未完成, 但又想轉去其他工作區, 可以用 stash 暫存起來
+```bash
+git satsh # stage 區的檔案暫存起來 git add 左的檔案
+git stash -u # 包括不在stage 區 的檔案
+git stash save -u "我是註解" # 加注解
+git stash list  #我們先來查詢看暫存是否還在
+git stash pop #檔案又回來了，又可以繼續未完成的工作囉！
+```
 
 ### Pull
 執行 pull 命令可以取得遠端數據庫的歷史記錄，
