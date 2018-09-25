@@ -3,6 +3,7 @@ layout: post
 title:  "AWS instance volume resize"
 date:   2018-09-22 18:09:11 +0800
 categories: AWS instance volume resize
+comments: true
 ---
 
 # How to AWS instance volume resize

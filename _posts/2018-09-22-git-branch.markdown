@@ -3,6 +3,7 @@ layout: post
 title:  "Git Branch"
 date:   2018-09-24 12:13:11 +0800
 categories: Git Branch
+comments: true
 ---
 [reference](https://backlog.com/git-tutorial/tw/)
 

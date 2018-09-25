@@ -3,6 +3,7 @@ layout: post
 title:  "phpMyAdmin on Ubuntu 16.04"
 date:   2018-09-19 10:45:11 +0800
 categories: phpMyAdmin
+comments: true
 ---
 
 ## How To Install and Secure phpMyAdmin on Ubuntu 

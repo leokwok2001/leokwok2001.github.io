@@ -3,6 +3,7 @@ layout: post
 title:  "postfix squirrelmail"
 date:   2018-08-13 0:45:11 +0800
 categories: squirrelmail postfix courier pop imap ubuntu
+comments: true
 ---
 ## mail server ubuntu (Squirrelmail postfix courier pop imap)
 

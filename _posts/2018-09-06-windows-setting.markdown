@@ -3,6 +3,7 @@ layout: post
 title:  "windows system "
 date:   2018-09-06 10:45:11 +0800
 categories: windows system
+comments: true
 ---
 
 

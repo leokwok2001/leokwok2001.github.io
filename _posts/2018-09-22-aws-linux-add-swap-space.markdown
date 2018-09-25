@@ -3,6 +3,7 @@ layout: post
 title:  "AWS linux add swap space"
 date:   2018-09-22 21:55:11 +0800
 categories: AWS linux swap 
+comments: true
 ---
 
 # How To Add Swap Space on Ubuntu 16.04 

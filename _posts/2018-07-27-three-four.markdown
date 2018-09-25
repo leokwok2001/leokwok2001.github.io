@@ -3,6 +3,7 @@ layout: post
 title:  "安息日學課-第四課"
 date:   2018-07-27 10:45:11 +0800
 categories: church
+comments: true
 ---
 
 

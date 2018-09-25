@@ -3,6 +3,7 @@ layout: post
 title:  "Python Development Env"
 date:   2018-05-01 17:00:11 +0800
 categories: python virtualenv
+comments: true
 ---
 ## VM network configuration In windows 10
  1. wi fi properities / ICS (internet connection sharing)

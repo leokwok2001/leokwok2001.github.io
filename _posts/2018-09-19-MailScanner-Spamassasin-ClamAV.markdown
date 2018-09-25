@@ -3,6 +3,7 @@ layout: post
 title:  "MailScanner Spamassasin ClamAV"
 date:   2018-09-19 10:45:11 +0800
 categories: MailScanner Spamassasin ClamAV
+comments: true
 ---
 
 # MailScanner Spamassasin ClamAV install

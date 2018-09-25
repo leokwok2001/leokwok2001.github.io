@@ -3,6 +3,7 @@ layout: post
 title:  "sublime text 3.1.1 Build 3176"
 date:   2018-07-15 11:45:11 +0800
 categories: SublimeText3
+comments: true
 ---
 
 ### In hosts file

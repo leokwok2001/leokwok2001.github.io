@@ -11,6 +11,10 @@
             </div>
         </div>
     </div>
-<div class="wrap" id="disqus_thread"></div>
+
+{% if page.comments %}
+        {% include disqus-comments.html %}
+
+  {% endif %}      
     {% include footer.html %}
 </div>

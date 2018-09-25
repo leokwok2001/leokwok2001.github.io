@@ -3,6 +3,7 @@ layout: post
 title:  "vim command"
 date:   2018-08-27 0:45:11 +0800
 categories: vim
+comments: true
 ---
 
 ```bash

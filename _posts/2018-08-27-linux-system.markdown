@@ -3,6 +3,7 @@ layout: post
 title:  "linux system "
 date:   2018-08-27 10:45:11 +0800
 categories: linux system
+comments: true
 ---
 
 

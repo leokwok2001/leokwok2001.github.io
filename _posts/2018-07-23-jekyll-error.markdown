@@ -3,6 +3,8 @@ layout: post
 title:  "jekyll error"
 date:   2018-07-22 10:45:11 +0800
 categories: jekyll error
+comments: true
+comments: true
 ---
 
 
