@@ -53,6 +53,29 @@ Fast-forward
  1 files changed, 1 insertions(+), 0 deletions(-)
 
 ```
+
+### pull remote git branch
+```bash
+git checkout --track origin/<branch name>
+```
+--track is shorthand for git checkout -b [branch] [remotename]/[branch] where [remotename] is origin in this case and [branch] is twice the same, daves_branch in this case.
+
+For git 1.5.6.5 you needed this: 
+```bash
+git checkout --track -b daves_branch origin/daves_branch
+```
+For git 1.7.2.3 and higher this is enough (might have started earlier but this is the earliest confirmation I could find quickly):
+git checkout daves_branch
+
+Note that with recent git versions, this command will not create a local branch and will put you in a 'detached HEAD' state. If you want a local branch, use the --track option. Full details here: http://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#Tracking-Branches
+
+OR;  
+```bash
+git fetch <remote> <RemoteBranch>:<LocalBranch> 
+git checkout <LocalBranch>
+```
+
+
 ### Pull
 執行 pull 命令可以取得遠端數據庫的歷史記錄，
 執行 pull 時，如果內容沒有衝突，就會自動建立合併提交。如果發生衝突的話，需先解決衝突然後再手動提交。
