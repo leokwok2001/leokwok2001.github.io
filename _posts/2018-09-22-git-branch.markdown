@@ -55,6 +55,15 @@ Fast-forward
 
 ```
 
+
+### reset merge 
+
+```bash
+git reflog
+git reset --heard d763d86
+```
+
+
 ### pull remote git branch
 ```bash
 git checkout --track origin/<branch name>
