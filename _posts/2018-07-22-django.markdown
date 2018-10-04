@@ -186,3 +186,78 @@ TEMPLATES = [
 ]
 
 ```
+
+
+### django mysql solved problem
+
+
+if  python 2.x version
+If pip install mysqlclient produces an error and you use Ubuntu, try:
+```bash
+sudo apt-get install -y python-dev libmysqlclient-dev 
+sudo pip install mysqlclient
+```
+
+if your python version is 3.5, do a :
+```bash
+apt-get install python-dev
+pip  install mysqlclient
+
+or 
+
+apt-get install python3.5-dev
+pip3.5 install mysqlclient
+
+```
+if dont work try below
+
+Note this is not tested for python 3.x
+```bash
+pip install wheel
+pip install pymysql
+
+```
+
+[ref](https://stackoverflow.com/questions/454854/no-module-named-mysqldb)
+### in settings.py
+```bash
+import pymysql
+pymysql.install_as_MySQLdb();
+```
+
+### INITIAL DJANGO MIGRATIONS FOR EXISTING DB SCHEMA.
+Step1: Empty the django_migrations table: 
+```bash
+delete from django_migrations;
+```
+Step2: Remove all the files in migrations folders in each and every app of your project.
+```bash
+rm -rf <app>/migrations/
+```
+Step3: Reset the migrations for the "built-in" apps:
+```bash
+python manage.py migrate --fake
+```
+Step4: Create initial migrations for each and every app:
+```bash
+python manage.py makemigrations <app>.
+```
+Step5: Final step is to create fake initial migrations:
+```bash
+python manage.py migrate --fake-initial
+```
+
+### Create model from existiong mysql database 
+
+果開發到一半才將資料庫轉成 MySQL，或是在 Django 中想要使用 MySQL 中的資料表，就必須在 Model 中寫好資料格式。但是已經建好表，要一個一個寫進 Model 起不是很麻煩？好在 Django 有個貼心功能，使用 inspectdb 就能把資料格式都匯入 Model囉！ 顯示轉換後的 Model 內容.
+```bash
+python manage.py inspectdb
+or
+python manage.py inspectdb > models.py
+
+```
+
+
+指定app 的 model.py 
+python manage.py makemigrations station
+python manage.py migrate
