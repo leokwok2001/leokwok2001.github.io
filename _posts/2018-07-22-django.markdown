@@ -4,6 +4,7 @@ title:  "django"
 date:   2018-07-22 10:45:11 +0800
 categories: django
 comments: true
+tags: django 
 ---
 
 
