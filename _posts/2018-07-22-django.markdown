@@ -262,3 +262,11 @@ python manage.py inspectdb > models.py
 指定app 的 model.py 
 python manage.py makemigrations station
 python manage.py migrate
+
+如果 啓動項目時報錯： 
+django.db.utils.ProgrammingError: (1146, “Table ‘vd.django_content_type’ doesn’t exist”)
+
+把原表格中django_migrations表刪除之後，重新執行命令 
+Python manage.py makemigrations 
+Python manage.py migrate 
+然後再啓動項目就可以啦
