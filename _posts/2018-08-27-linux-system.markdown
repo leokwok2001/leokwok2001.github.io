@@ -50,3 +50,13 @@ firewall-cmd --reload
 ```bash
 systemctl restart apache2
 ```
+
+## kill process by PID
+It's a single line, but you'd need to put it into a shell alias or shell script in order to make it easy to use:
+```bash
+ kill $(lsof -i tcp:8080 | tail -n +2 | awk '{ print $2 }')
+```
+If you want to see and kill processes that don't belong to you, then sudo needs to get involved:
+```bash
+ sudo kill $(sudo lsof -i tcp:8080 | tail -n +2 | awk '{ print $2 }')
+```
