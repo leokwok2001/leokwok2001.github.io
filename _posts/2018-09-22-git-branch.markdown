@@ -114,3 +114,14 @@ FETCH_HEAD 合併後，歷史記錄會和執行pull操作的結果相同。實�
 若要開認證管理員，請選取 [開始]  按鈕然後搜尋 [控制台]。
 選取 [使用者帳戶] > [認證管理員] (Credential Manager)。 您可以從這個畫面管理 Web 認證和Windows 認證。
 
+
+### Show Remote Info.
+```bash
+git remote -v
+# or
+git remote get-url origin
+# or
+git config --get remote.origin.url
+# or
+git remote show origin
+```
