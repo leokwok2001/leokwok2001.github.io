@@ -252,21 +252,20 @@ python manage.py migrate --fake-initial
 
 果開發到一半才將資料庫轉成 MySQL，或是在 Django 中想要使用 MySQL 中的資料表，就必須在 Model 中寫好資料格式。但是已經建好表，要一個一個寫進 Model 起不是很麻煩？好在 Django 有個貼心功能，使用 inspectdb 就能把資料格式都匯入 Model囉！ 顯示轉換後的 Model 內容.
 ```bash
-python manage.py inspectdb
-or
-python manage.py inspectdb > models.py
+python manage.py inspectdb > <yourapp>/models.py
+python manage.py makemigrations <yourapp>
+python manage.py migrate
 
 ```
 
 
-指定app 的 model.py 
-python manage.py makemigrations station
-python manage.py migrate
-
-如果 啓動項目時報錯： 
+if 如果啓動項目時報錯： 
+```bash
 django.db.utils.ProgrammingError: (1146, “Table ‘vd.django_content_type’ doesn’t exist”)
-
-把原表格中django_migrations表刪除之後，重新執行命令 
-Python manage.py makemigrations 
+```
+把原表格中django_migrations表刪除資料之後，重新執行命令 
+```bash
+Python manage.py makemigrations <yourapp>
 Python manage.py migrate 
+```
 然後再啓動項目就可以啦
