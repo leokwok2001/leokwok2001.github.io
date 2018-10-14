@@ -269,3 +269,17 @@ Python manage.py makemigrations <yourapp>
 Python manage.py migrate 
 ```
 然後再啓動項目就可以啦
+
+
+## python static file
+in settings.py
+
+```bash
+... ...
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+```
+
+```bash
+python manage.py collectstatic
+```
