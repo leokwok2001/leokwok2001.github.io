@@ -32,3 +32,40 @@ sudo apt-get install php5.6-mbstring
 sudo apt-get install php5.6-mysql
 sudo service apache2 restart
 ```
+
+
+## php安装错误 (node.c:1953:error dereferencing pointer to incomplete type) 解决办法
+
+make: *** [ext/dom/node.lo] Error 1
+在国外的一个网站上找到了这个，其他版本的php也同样适用。
+```bash
+ curl -o php-5.x.x.patch https://mail.gnome.org/archives/xml/2012-August/txtbgxGXAvz4N.txt
+ cd php-5.x.x
+ patch -p0 -b < ./php-5.x.x.patch 
+
+#   patching file ext/dom/node.c
+
+#   patching file 
+
+#   ext/dom/documenttype.c
+
+#   patching file ext/simplexml/simplexml.c
+```
+再次编译即可。
+
+
+## php.ini Loaded Configuration File :none  觖決方法
+
+在linux下可以使用bash命令脚本：
+```bash
+sudo find / -name 'php.ini'
+```
+
+
+实在没有办法，只能使用strace去追踪一下：
+```bash
+strace  /usr/local/php/bin/php -i 2> /tmp/1.log
+```
+此时，发现问题，php竟然去/usr/local/php/bin/ 下去找php.ini了。
+
+
