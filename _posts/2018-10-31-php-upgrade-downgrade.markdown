@@ -69,3 +69,7 @@ strace  /usr/local/php/bin/php -i 2> /tmp/1.log
 此时，发现问题，php竟然去/usr/local/php/bin/ 下去找php.ini了。
 
 
+## php.ini default timezone
+```bash
+date.timezone=Asia/Hong_Kong
+```

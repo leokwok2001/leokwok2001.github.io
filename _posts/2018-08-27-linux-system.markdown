@@ -60,3 +60,8 @@ If you want to see and kill processes that don't belong to you, then sudo needs 
 ```bash
  sudo kill $(sudo lsof -i tcp:8080 | tail -n +2 | awk '{ print $2 }')
 ```
+
+## ubuntu javascript default path
+~~~
+/usr/share/javascript 
+~~~
