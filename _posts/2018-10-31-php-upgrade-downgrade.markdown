@@ -73,3 +73,55 @@ strace  /usr/local/php/bin/php -i 2> /tmp/1.log
 ```bash
 date.timezone=Asia/Hong_Kong
 ```
+
+
+
+## self compile php configure file
+
+
+```bash
+## omited 
+#--with-mysqli= /etc/mysql/my.cnf \
+#--with-openssl=/usr/local2/ \
+#--with-iconv=/usr/local \
+#--with-ttf \
+#--with-xpm \
+#--with-xml \
+#--enable-track-vars \
+#--enable-memory-limit \
+
+
+
+sudo ./configure \
+--prefix=/usr/local/php55329 \
+--with-config-file-path=/usr/local/php55329/etc \
+--with-apxs2 \
+--with-curl=/usr/local/lib \
+--with-gd \
+--enable-gd-native-ttf \
+--with-gettext \
+--with-jpeg-dir=/usr/local/lib \
+--with-freetype-dir=/usr/local/lib \
+--with-kerberos \
+--with-mcrypt \
+--with-mhash \
+--with-mysql=/usr/bin/mysql \
+--with-pdo-mysql \
+--with-pear \
+--with-png-dir=/usr/local/lib \
+--with-zlib \
+--with-zlib-dir=/usr/local/lib \
+--enable-zip \
+--enable-bcmath \
+--enable-calendar \
+--enable-ftp \
+--enable-magic-quotes \
+--enable-sockets \
+--enable-mbstring \
+--enable-mbregex \
+--enable-exif \
+--disable-ipv6 \
+--with-imap=/usr/local/imap-2007 \
+--with-imap-ssl \
+--enable-soap 
+```
