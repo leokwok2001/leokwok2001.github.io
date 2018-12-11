@@ -51,7 +51,11 @@ python3.6 -V
 ```bash
 sudo yum install python36u-pip
 sudo yum install python36u-devel
+# if ubuntu use below
+sudo apt-get install python3.6-venv
+
 ```
+
 
 ```bash
 # This should return the system Python version
@@ -70,6 +74,7 @@ That’s it. Now I have Python 3.6 ready torun my apps!
 ## Creating a virtualenv
 
 ```bash
+
 python3.6 -m venv venv
 ```
 To activate the virtualenv and start installing packages with pip:
