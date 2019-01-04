@@ -14,3 +14,10 @@ EDIT the /wp-includes/class-http.php - change SSL noted change in code  below
  sslverify=>false
 
 ```
+
+pugin woocommerence clear all install data
+
+Edit /wp-confg.php
+```bash
+define( 'WC_REMOVE_ALL_DATA', true);
+```
