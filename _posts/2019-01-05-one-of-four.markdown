@@ -4,7 +4,6 @@ title:  "安息日學課-第1季 啟示錄 第1課"
 date:   2019-01-05 10:45:11 +0800
 categories: church
 comments: true
-tags: church2 
 ---
 
 # 第1課 12月29日－1月4日 來自拔摩海島的福音
