@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "jekyll error"
+title:  "jekyll"
 date:   2018-07-22 10:45:11 +0800
-categories: jekyll error
+categories: jekyll
 comments: true
 comments: true
 ---
@@ -22,3 +22,28 @@ jekyll 3.8.2 | Error:  jekyll-paginate
 gem "jekyll-sitemap"
 gem "jekyll-paginate"
 ```
+
+## jekyll install 
+```bash
+#https://jekyllrb.com/
+#Quick-start Instructions
+gem install bundler jekyll
+jekyll new my-awesome-site
+cd my-awesome-site
+bundle exec jekyll serve
+# => Now browse to http://localhost:4000
+```
+
+##  tempalte resource
+- [jekyllthemes.org](http://jekyllthemes.org)
+- [jekyllthemes.io](http://jekyllthemes.io)
+
+## for DNS add CNAME file
+```bash
+bible.leo-kwok.com
+```
+
+
+## create a repro on github.com
+![](images/github01.png?raw=true)
+
