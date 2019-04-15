@@ -47,9 +47,9 @@ bible.leo-kwok.com
 ## create a repro on github
 ### setting
 
-![Image setting](https://blog.leo-kwok.com/images/github01.png)
+![Image setting](https://blog.leo-kwok.com/assets/images/github01.png)
 
-![Image setting](https://blog.leo-kwok.com/images/github02.png)
+![Image setting](https://blog.leo-kwok.com/assets/images/github02.png)
 
 ## DNS on godaddy.com settings choose cname
 ```bash
