@@ -44,7 +44,9 @@ bible.leo-kwok.com
 ```
 
 
-## create a repro on github.com
+## create a repro on github
 ### setting
+
 ![Image setting](https://blog.leo-kwok.com/images/github01.png)
 
+![Image setting](https://blog.leo-kwok.com/images/github02.png)
