@@ -55,4 +55,5 @@ bible.leo-kwok.com
 ```bash
 # the project is store like this   yourname.github.io/repo
 cname  bible  leokwok2001.github.io  1 Hour 
+# done!
 ```
