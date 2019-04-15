@@ -50,3 +50,9 @@ bible.leo-kwok.com
 ![Image setting](https://blog.leo-kwok.com/images/github01.png)
 
 ![Image setting](https://blog.leo-kwok.com/images/github02.png)
+
+## DNS on godaddy.com settings choose cname
+```bash
+# the project is store like this   yourname.github.io/repo
+cname  bible  leokwok2001.github.io  1 Hour 
+```
