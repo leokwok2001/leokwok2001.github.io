@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "Gitlab.com"
+date:   2019-06-14 12:13:11 +0800
+categories: Gitlab
+comments: true
+---
+
+[reference](https://stackoverflow.com/questions/42830557/git-remote-add-origin-vs-remote-set-url-origin/42830632)
+
+
+## in gitlab. you must add use name.
+```bash
+git remote add origin => ADDS a new remote.
+git remote set-url origin  => UPDATES existing remote.
+or
+git remote add origin https://yourname@gitlab.com/yourname/yourproject.git
+```
+
