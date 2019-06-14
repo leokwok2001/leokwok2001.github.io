@@ -9,11 +9,11 @@ comments: true
 [reference](https://stackoverflow.com/questions/42830557/git-remote-add-origin-vs-remote-set-url-origin/42830632)
 
 
-## in gitlab. you must add use name.
+## in gitlab. you must add username.
 ```bash
 git remote add origin => ADDS a new remote.
 git remote set-url origin  => UPDATES existing remote.
 or
-git remote add origin https://yourname@gitlab.com/yourname/yourproject.git
+git remote add origin https://[yourname]@gitlab.com/yourname/yourproject.git
 ```
 
