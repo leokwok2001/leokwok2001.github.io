@@ -1,0 +1,122 @@
+---
+layout: post
+title:  "Ubuntu Linux+Nginx+MySQL+PHP+phpMyAdmin"
+date:   2019-08-05 12:13:11 +0800
+categories: LNMP
+comments: true
+---
+
+
+[How to install PHP (7, 7.2 or 7.3) on Ubuntu](https://thishosting.rocks/install-php-on-ubuntu/)
+[Reset the MySQL 5.7 root password in Ubuntu 16.04 LTS](https://coderwall.com/p/j9btlg/reset-the-mysql-5-7-root-password-in-ubuntu-16-04-lts)
+[Install Laravel 5.7, PHP 7.3 and NGINX on Ubuntu](https://www.axfon.com/install-laravel-5-7-php-7-3-and-nginx-on-ubuntu/)
+
+
+Step 1: Install NGINX as Web Server
+```bash
+sudo apt-get update && apt-get upgrade
+sudo apt install nginx
+```
+```bash
+sudo service nginx status
+```
+
+Step 2: Configuration the Firewall with UFW
+```bash
+sudo ufw allow OpenSSH
+sudo ufw allow 'Nginx HTTP'
+```
+Now enable ufw for Firewall.
+```bash
+sudo ufw enable
+sudo ufw status
+```
+Step 3: Install PHP 7.3 FPM and Related Modules
+```bash
+sudo apt-get install software-properties-common
+sudo apt-get update
+apt-get install php7.3
+```
+
+To set PHP 7.3 as the default, run:
+```bash
+update-alternatives --set php /usr/bin/php7.3
+```
+Once the PPA repository has been added and updated, now we are going to install PHP 7.3
+```bash
+sudo apt-get install php7.3-fpm php7.3-cli php7.3-mysql php7.3-gd php7.3-imagick php7.3-recode php7.3-tidy php7.3-xmlrpc php7.3-common php7.3-curl php7.3-mbstring php7.3-xml php7.3-bcmath php7.3-bz2 php7.3-intl php7.3-json php7.3-readline php7.3-zip
+#apt-get install php-pear php7.3-curl php7.3-dev php7.3-gd php7.3-mbstring php7.3-zip php7.3-mysql php7.3-xml
+
+```
+To verified PHP 7.3 was installed correctly on the web server, you may check the PHP version
+```bash
+sudo php -v
+```
+The default location of the PHP socket that Nginx List the contents for the directory /var/run/php/
+```bash
+ls /var/run/php/
+```
+You will see the output like below, note this below we are going to use for the next server block configuration
+```bash
+php7.3-fpm.pid php7.3-fpm.sock
+```
+
+Step 4: Configure PHP file (Optional)
+```bash
+sudo vi /etc/php/7.3/fpm/php.ini
+```
+```bash
+error_reporting = E_COMPILE_ERROR | E_RECOVERABLE_ERROR | E_ERROR | E_CORE_ERROR
+max_input_time = 30
+error_log = /var/log/php/error.log
+file_uploads = On
+allow_url_fopen = On
+memory_limit = 256M
+upload_max_filesize = 100M
+max_execution_time = 360
+date.timezone = America/Los_Angeles
+```
+Step 5:Configuration Server Blocks
+```bash
+sudo vi /etc/nginx/sites-available/default
+```
+```bash
+server {
+    listen 80;
+    listen [::]:80;
+    root /var/www/html/lab-axfon/public;
+    index index.php index.html index.htm;
+    server_name lab.axfon.com;
+
+    location / {
+         try_files $uri $uri/ /index.php?$args;        
+    }
+
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+}
+```
+```bash
+sudo service nginx restart
+```
+
+Step 5: install MySQL
+```bash
+sudo apt-get install mysql-server mysql-client
+```
+
+Step 6: install phpMyAdmin
+```bash
+sudo apt-get install phpmyadmin
+sudo ln -s /usr/share/phpmyadmin/ /var/www/phpmyadmin
+```
+
