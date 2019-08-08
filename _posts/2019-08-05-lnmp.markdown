@@ -51,7 +51,18 @@ sudo apt-get install php7.3-fpm php7.3-cli php7.3-mysql php7.3-gd php7.3-imagick
 To verified PHP 7.3 was installed correctly on the web server, you may check the PHP version
 ```bash
 sudo php -v
+or 
+sudo php -me
 ```
+To install  PHP  FastCGI Process Manager(fpm)
+```bash
+sudo apt-get install php7.3-fpm
+or
+sudo apt-get install php7.2-fpm
+or
+sudo apt-get install php7.1-fpm
+```
+
 The default location of the PHP socket that Nginx List the contents for the directory /var/run/php/
 ```bash
 ls /var/run/php/
