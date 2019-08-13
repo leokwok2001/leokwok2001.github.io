@@ -10,7 +10,7 @@ comments: true
 
 1. [Introduction to Amazon Simple Storage Service(S3)](https://www.qwiklabs.com/focuses/278?locale=en&parent=catalog)
 [cyrus wong youtube](https://www.youtube.com/watch?v=upbCSD4LeOo)
-2. [Introduction to AWS lambda](https://awseducate.qwiklabs.com/focuses/6921?parent=catalog)
+2. [Introduction to AWS lambda](https://awseducate.qwiklabs.com/focuses/6921?parent=catalog)[IAM create lambda-execution-role](https://www.youtube.com/watch?v=T7cny-uyCuA)
 3. [Introduction to Amazon Virtual Private Cloud(VPC)](https://awseducate.qwiklabs.com/focuses/31?parent=catalog)
 4. [Introduction to Amazon CloudFront](https://awseducate.qwiklabs.com/focuses/22?parent=catalog)
 5. [Introduction to Amazon DynamoDB](https://awseducate.qwiklabs.com/focuses/23?parent=catalog)
