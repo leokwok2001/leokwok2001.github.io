@@ -10,7 +10,7 @@ comments: true
 # How to Setup a SES in AWS
 
 ## 1. [Reference about How to Setup a SES ](https://www.youtube.com/watch?v=IrSP7soIq3A&t=264s)
-![new domain](newdomain.jpg)
+![new domain](/assets/images/newdomain.jpg)
 ## 2. Prepare sendmail.php file
 ```php
 //------------------------
