@@ -7,10 +7,16 @@ comments: true
 ---
 
 
-# How to Setup a SES in AWS
+# How to Setup a (Simple email service ) SES in AWS
 
-## 1. [Reference about How to Setup a SES ](https://www.youtube.com/watch?v=IrSP7soIq3A&t=264s)
+
+## 1. Create a new domain in SES AWS 
 ![new domain](/assets/images/newdomain.jpg)
+
+you need the add few line of record to your DNS. 
+copy all the things except .yourdmain to your DNS cPanel  
+[Reference about How to Setup a SES ](https://www.youtube.com/watch?v=IrSP7soIq3A&t=264s)
+
 ## 2. Prepare sendmail.php file
 ```php
 //------------------------
