@@ -7,9 +7,9 @@ comments: true
 ---
 
 # reference setting of .gitignore for flutter project
-(ref1)[https://github.com/flutter/flutter/blob/master/.gitignore]  
-(ref2)[https://www.twblogs.net/a/5c9564e1bd9eee491b61f8ea]  
-(ref3)[https://github.com/yousifm/flutter-102/blob/master/.gitignore]
+[ref1](https://github.com/flutter/flutter/blob/master/.gitignore)
+[ref2](https://www.twblogs.net/a/5c9564e1bd9eee491b61f8ea)  
+[ref3](https://github.com/yousifm/flutter-102/blob/master/.gitignore)
 
 ~~~
 # Miscellaneous
