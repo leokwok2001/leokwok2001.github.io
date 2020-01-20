@@ -24,6 +24,13 @@ git checkout -b <branch>  ## create and change branch same time
 ### create remote branch
 ```bash
 git push --set-upstream origin 20180924
+or ;
+
+#Syntax:
+git push <REMOTE_NAME> <BRANCH_NAME>
+#Command:
+git push origin stage1
+
 ```
 
 ### branch checkout 
