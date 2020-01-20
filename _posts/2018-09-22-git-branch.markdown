@@ -68,6 +68,15 @@ Fast-forward
 ```bash
 git reflog
 git reset --heard d763d86
+
+#or
+#Remove all untracked files.
+git clean -f
+#Remove all unstaged changes in my working tree.
+git checkout .
+# Reset to the latest commit on remote/upstream
+git reset --hard HEAD
+
 ```
 
 

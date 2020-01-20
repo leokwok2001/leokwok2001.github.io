@@ -11,7 +11,8 @@ comments: true
 [ref2](https://www.twblogs.net/a/5c9564e1bd9eee491b61f8ea)  
 [ref3](https://github.com/yousifm/flutter-102/blob/master/.gitignore)
 
-~~~
+
+```bash
 # Miscellaneous
 
 *.class
@@ -85,8 +86,10 @@ lib/generated_plugin_registrant.dart
 # Exceptions to above rules.
 
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
-~~~
-~~~
+
+```
+
+```bash
 # Miscellaneous
 *.class
 *.lock
@@ -199,7 +202,20 @@ coverage/
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
 
-~~~
+```
 
 
-
+### first:
+```bash
+git rm -r --cached . 
+git add .
+```
+### second:
+```bash
+git commit -am "Remove ignored files"
+```
+### last:
+```bash
+git pull origin branch-name
+git push origin branch-name
+```
