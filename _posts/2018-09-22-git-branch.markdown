@@ -24,6 +24,13 @@ git checkout -b <branch>  ## create and change branch same time
 ### create remote branch
 ```bash
 git push --set-upstream origin 20180924
+or ;
+
+#Syntax:
+git push <REMOTE_NAME> <BRANCH_NAME>
+#Command:
+git push origin stage1
+
 ```
 
 ### branch checkout 
@@ -61,6 +68,15 @@ Fast-forward
 ```bash
 git reflog
 git reset --heard d763d86
+
+#or
+#Remove all untracked files.
+git clean -f
+#Remove all unstaged changes in my working tree.
+git checkout .
+# Reset to the latest commit on remote/upstream
+git reset --hard HEAD
+
 ```
 
 

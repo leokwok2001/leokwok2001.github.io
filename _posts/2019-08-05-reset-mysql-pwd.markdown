@@ -25,6 +25,7 @@ mysql -uroot mysql
 Update the password for the root user.
 ```bash
 UPDATE mysql.user SET authentication_string=PASSWORD('YOURNEWPASSWORD'), plugin='mysql_native_password' WHERE User='root' AND Host='%';
+#UPDATE mysql.user SET authentication_string=PASSWORD('YOURNEWPASSWORD'), plugin='mysql_native_password' WHERE User='root' AND Host='localhost';
 EXIT;
 ```
 
