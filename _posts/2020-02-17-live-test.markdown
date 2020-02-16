@@ -9,6 +9,19 @@ comments: true
 # How to embedded Twitch Live in web page
 
 ```bash
+# html embedded
+<iframe
+    src="https://player.twitch.tv/?channel=leokwok2001&muted=false"
+    height="720"
+    width="1280"
+    frameborder="0"
+    scrolling="no"
+    allowfullscreen="true">
+</iframe>
+```
+
+```bash
+# java script embedded 
 <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
 <div id="test"></div>
 <script type="text/javascript">
