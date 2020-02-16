@@ -10,7 +10,7 @@ comments: true
 [How to install PHP (7, 7.2 or 7.3) on Ubuntu](https://thishosting.rocks/install-php-on-ubuntu/)
 [Reset the MySQL 5.7 root password in Ubuntu 16.04 LTS](https://coderwall.com/p/j9btlg/reset-the-mysql-5-7-root-password-in-ubuntu-16-04-lts)
 [Install Laravel 5.7, PHP 7.3 and NGINX on Ubuntu](https://www.axfon.com/install-laravel-5-7-php-7-3-and-nginx-on-ubuntu/)
-
+[Basic PHP 7 and Nginx Configuration on Ubuntu 16.04 Linux](https://linuxconfig.org/basic-php-7-and-nginx-configuration-on-ubuntu-16-04-linux)
 
 Step 1: Install NGINX as Web Server
 ```bash
