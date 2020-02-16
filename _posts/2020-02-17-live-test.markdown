@@ -6,7 +6,7 @@ categories: Live test
 comments: true
 ---
 
-# embedded Twitch in web page
+# embedded Twitch Live in web page
 
 ```bash
 <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
