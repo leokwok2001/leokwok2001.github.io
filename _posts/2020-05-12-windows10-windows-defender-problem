@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "change cmd default path"
+date:   2020-05-12 12:13:11 +0800
+categories: windows defender
+comments: true
+---
+
+
+# windows defender 打开只有安全性概览如何解决？
+
+按下WIN+R，运行regedit回车
+找到路径：
+
+```bash
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService
+```
+然后双击右边的“start”把值由8改为2，然后重启电脑就可以了.
