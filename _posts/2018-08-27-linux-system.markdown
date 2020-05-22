@@ -65,3 +65,10 @@ If you want to see and kill processes that don't belong to you, then sudo needs 
 ~~~
 /usr/share/javascript 
 ~~~
+
+## merge copy to targe folder
+```bash
+rsync -av /source/ /destination/
+(after checking)
+rm -rf /source/
+```
