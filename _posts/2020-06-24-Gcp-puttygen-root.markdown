@@ -16,3 +16,9 @@ comments: true
 #Step2 Save Private Key
 
 done!
+
+# bitnami wordpress path?
+
+```bash
+/opt/bitnami/apps/wordpress/htdocs
+```
