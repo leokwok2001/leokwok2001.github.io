@@ -7,4 +7,5 @@ comments: true
 ---
 
 #Step1 PuTTY key Generator.
-![new domain](/assets/images/newdomain.jpg)
+
+![new domain](/assets/images/puttygen.jpg)
