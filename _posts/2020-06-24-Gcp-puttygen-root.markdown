@@ -8,11 +8,9 @@ comments: true
 
 #Step1 PuTTY key Generator.
 
-```bash
-Key commend: root
-```
+>in key commend  input root.
 
-![putygen](/assets/images/puttygen.jpg)
+![putygen](/assets/images/puttygen.png)
 
 
 #Step2 Save Private Key
