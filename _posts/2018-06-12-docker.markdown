@@ -69,3 +69,12 @@ docker rm $(docker ps -a -q)
 ## Docker-compose
 [reference](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-14-04)
 
+# interactive with runing container.
+```bash 
+$ sudo docker exec -it sql1 /bin/bash
+```
+
+# copy base os file to running container.
+```bash 
+$ sudo docker cp foo.txt sql1:/foo.txt
+```
