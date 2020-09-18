@@ -79,4 +79,4 @@ $ sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<YourStrong@Passw0rd>"
 $ sudo docker ps -a
 ```
 
-## config the GCP firewall to allow Tcp 1433 port access MSSQL for external.
+## setup  GCP firewall  allow Tcp 1433 port access from external.
