@@ -1,14 +1,17 @@
 ---
 layout: post
-title:  "Google cloud platform Docker MSSQL "
+title:  "Google cloud platform + Docker + MSSQL "
 date:   2020-09-18 12:13:11 +0800
 categories: Google cloud platform
 comments: true
 ---
 # Reference
-[SSH for Google Cloud Platform](https://chrome.google.com/webstore/detail/ssh-for-google-cloud-plat/ojilllmhjhibplnppnamldakhpmdnibd)
-[Docs.Microsoft](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash)
-[Install Docker](https://docs.docker.com/engine/install/)
+- [SSH for Google Cloud Platform](https://chrome.google.com/webstore/detail/ssh-for-google-cloud-plat/ojilllmhjhibplnppnamldakhpmdnibd)
+  
+- [Docs.Microsoft](https://docs.microsoft.com/en-us/sql/linux/
+quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash)
+
+- [Install Docker](https://docs.docker.com/engine/install/)
 
 # MSSQL 2019 Requirment 
 - Memory	2 GB
