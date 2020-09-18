@@ -10,7 +10,7 @@ comments: true
 [Docs.Microsoft](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash)
 [Install Docker](https://docs.docker.com/engine/install/)
 
-# MSQL 2019 Requirment 
+# MSSQL 2019 Requirment 
 - Memory	2 GB
 - File System	XFS or EXT4 (other file - systems, such as BTRFS, are unsupported)
 - Disk space	2 GB
