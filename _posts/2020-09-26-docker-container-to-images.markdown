@@ -46,3 +46,13 @@ docker tag bb38976d03cf yourhubusername/verse_gapminder:firsttry
 ```bash
 docker push leokwok2001/docker-sql1
 ```
+
+# docker remove image
+```bash
+docker image rm imagename
+```
+
+# docker pull remove repro
+```bash
+docker pull leokwok2001/docker-sql1:latest
+```
