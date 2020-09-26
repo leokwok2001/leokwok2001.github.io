@@ -40,3 +40,9 @@ docker images
 ```bash
 docker tag bb38976d03cf yourhubusername/verse_gapminder:firsttry
 ```
+
+
+# upload to hub.docker
+```bash
+docker push leokwok2001/docker-sql1
+```
