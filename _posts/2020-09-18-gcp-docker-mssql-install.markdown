@@ -51,6 +51,10 @@ $ sudo add-apt-repository \
    stable"
 
 ```
+```bash
+/etc/apt/sources.list
+deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+```
 
 ## INSTALL DOCKER ENGINE
 ```bash
