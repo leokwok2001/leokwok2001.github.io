@@ -22,3 +22,7 @@ server : 127.0.0.1,5001
 logn: sa
 pwd: ****
 ```
+
+# testing 
+- test1
+- test2

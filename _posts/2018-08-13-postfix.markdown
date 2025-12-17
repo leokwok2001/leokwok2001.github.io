@@ -19,6 +19,10 @@ http://localhost
 done!
 
 
+
+
+
+
 ### 2 install postfix
 ```bash
 apt-get instal vim 
